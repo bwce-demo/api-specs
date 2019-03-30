@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0.0",
     "title": "PurchaseOrder",
-    "x-lastModified": "Dec 02, 2018 05:11AM PST"
+    "x-lastModified": "Mar 29, 2019 21:58PM PST"
   },
   "paths": {
     "/order": {
@@ -37,7 +37,8 @@
         "operationId": "postOrder",
         "consumes": [
           "application/json"
-        ]
+        ],
+        "summary": "Supplier API to create a Purchase Order"
       }
     }
   },
