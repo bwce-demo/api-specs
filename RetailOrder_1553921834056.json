@@ -1,0 +1,84 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "RetailOrder",
+    "x-lastModified": "Mar 28, 2019 03:19AM PST"
+  },
+  "paths": {
+    "/order": {
+      "post": {
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success response",
+            "schema": {
+              "$ref": "#/definitions/RetailOrderResponse"
+            },
+            "examples": {
+              "application/json": {
+                "OrderId": "123"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/RetailOrderRequest"
+            }
+          }
+        ],
+        "operationId": "postOrder",
+        "consumes": [
+          "application/json"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "RetailOrderRequest": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "quantity": {
+                "type": "integer",
+                "default": 1
+              },
+              "productId": {
+                "type": "string",
+                "default": "P1"
+              },
+              "name": {
+                "type": "string",
+                "default": "Laptop Bag"
+              }
+            }
+          }
+        },
+        "price": {
+          "type": "integer",
+          "default": 26
+        }
+      }
+    },
+    "RetailOrderResponse": {
+      "type": "object",
+      "properties": {
+        "OrderId": {
+          "type": "string",
+          "default": "123"
+        }
+      }
+    }
+  }
+}
